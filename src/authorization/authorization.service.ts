@@ -85,6 +85,9 @@ export class AuthorizationService {
       }
     });
   }
+  removeAll() {
+    return this.prismaService.accounts.deleteMany();
+  }
 
   async signToken(createAuthorizationDto: CreateAuthorizationDto):
     Promise<{ access_token: string }> {

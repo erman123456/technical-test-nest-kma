@@ -41,4 +41,9 @@ export class AuthorizationController {
   remove(@Param('id') id: string) {
     return this.authorizationService.remove(+id);
   }
+  @Post('/removeAll')
+  @UseGuards(AuthGuard)
+  removeAll() {
+    return this.authorizationService.removeAll();
+  }
 }
