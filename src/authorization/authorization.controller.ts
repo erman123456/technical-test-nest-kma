@@ -24,10 +24,10 @@ export class AuthorizationController {
     return this.authorizationService.findAll();
   }
 
-  @Get(':id')
+  @Get(':username')
   @UseGuards(AuthGuard)
-  findOne(@Param('id') id: string) {
-    return this.authorizationService.findOne(+id);
+  findOne(@Param('username') username: string) {
+    return this.authorizationService.findOne(username);
   }
 
   @Patch(':id')

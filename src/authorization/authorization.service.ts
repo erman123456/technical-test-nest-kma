@@ -59,10 +59,10 @@ export class AuthorizationService {
     return this.prismaService.accounts.findMany();
   }
 
-  findOne(id: number) {
+  findOne(username: string) {
     return this.prismaService.accounts.findFirst({
       where: {
-        id: id
+        username: username
       }
     });
   }
